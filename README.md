@@ -27,12 +27,12 @@ npm run preview
 
 ## Deploy
 
-This repo is configured for GitHub Pages deployment.
+This repo is configured for GitHub Pages deployment via GitHub Actions.
 
-1. Push to GitHub and set the repository's Pages source to `gh-pages` branch.
-2. On the first publish, the workflow will build and deploy automatically.
+- On each push to `main`, the workflow will build the app and publish the `dist/` output.
+- No manual GitHub Pages branch configuration is needed.
 
-You can also deploy manually once a remote exists:
+If you want to publish locally instead, you can still run:
 
 ```bash
 npm run deploy
