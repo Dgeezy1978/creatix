@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Repurposer Pro - Turn 1 Video Into 10+ Pieces of Content</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header-content">
+        <h1>🎬 Content Repurposer Pro</h1>
+        <p class="subtitle">Turn 1 video into 10+ pieces of content. Monetize smarter, not harder.</p>
+        <div class="pricing-badge">
+          <span class="badge">🚀 $29/month</span>
+          <span class="free-trial">14-day free trial</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="input-section">
+        <div class="input-card">
+          <h2>📹 Start with Your Content</h2>
+          <div class="input-options">
+            <button id="upload-video" class="btn btn-primary">
+              <span class="icon">📤</span>
+              Upload Video
+            </button>
+            <button id="paste-url" class="btn btn-secondary">
+              <span class="icon">🔗</span>
+              Paste YouTube URL
+            </button>
+            <button id="record-audio" class="btn btn-secondary">
+              <span class="icon">🎙️</span>
+              Record Audio
+            </button>
+          </div>
+
+          <div id="url-input" class="url-input hidden">
+            <input type="url" id="video-url" placeholder="https://youtube.com/watch?v=..." class="url-field">
+            <button id="load-url" class="btn btn-small">Load Video</button>
+          </div>
+
+          <div id="video-preview" class="video-preview hidden">
+            <video id="preview-video" controls></video>
+            <div class="video-info">
+              <h3 id="video-title">Video Title</h3>
+              <p id="video-duration">Duration: 0:00</p>
+              <button id="process-video" class="btn btn-success">🚀 Process & Repurpose</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="results-section" class="results-section hidden">
+        <div class="results-header">
+          <h2>✨ Your Repurposed Content</h2>
+          <div class="export-controls">
+            <button id="export-all" class="btn btn-primary">📤 Export All</button>
+            <button id="save-project" class="btn btn-secondary">💾 Save Project</button>
+          </div>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-card" data-type="tiktok">
+            <div class="card-header">
+              <span class="platform-icon">🎵</span>
+              <h3>TikTok Clips</h3>
+              <span class="count" id="tiktok-count">0</span>
+            </div>
+            <div class="clips-list" id="tiktok-clips"></div>
+          </div>
+
+          <div class="content-card" data-type="instagram">
+            <div class="card-header">
+              <span class="platform-icon">📸</span>
+              <h3>Instagram Posts</h3>
+              <span class="count" id="instagram-count">0</span>
+            </div>
+            <div class="posts-list" id="instagram-posts"></div>
+          </div>
+
+          <div class="content-card" data-type="twitter">
+            <div class="card-header">
+              <span class="platform-icon">🐦</span>
+              <h3>Twitter Threads</h3>
+              <span class="count" id="twitter-count">0</span>
+            </div>
+            <div class="threads-list" id="twitter-threads"></div>
+          </div>
+
+          <div class="content-card" data-type="blog">
+            <div class="card-header">
+              <span class="platform-icon">📝</span>
+              <h3>Blog Posts</h3>
+              <span class="count" id="blog-count">0</span>
+            </div>
+            <div class="blog-list" id="blog-posts"></div>
+          </div>
+
+          <div class="content-card" data-type="newsletter">
+            <div class="card-header">
+              <span class="platform-icon">📧</span>
+              <h3>Email Newsletters</h3>
+              <span class="count" id="newsletter-count">0</span>
+            </div>
+            <div class="newsletter-list" id="newsletter-templates"></div>
+          </div>
+
+          <div class="content-card" data-type="podcast">
+            <div class="card-header">
+              <span class="platform-icon">🎧</span>
+              <h3>Podcast Clips</h3>
+              <span class="count" id="podcast-count">0</span>
+            </div>
+            <div class="podcast-list" id="podcast-clips"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="features-section">
+        <h2>💰 Monetization Features</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🔗</div>
+            <h4>Affiliate Link Manager</h4>
+            <p>Automatically insert affiliate links into all repurposed content</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h4>Performance Analytics</h4>
+            <p>Track which repurposed content performs best across platforms</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h4>Sponsored Content Tags</h4>
+            <p>Mark sponsored segments and comply with FTC guidelines</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🤖</div>
+            <h4>AI Content Generation</h4>
+            <p>Generate captions, descriptions, and social posts automatically</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-section">
+        <h2>🚀 Start Making Money Today</h2>
+        <div class="pricing-cards">
+          <div class="pricing-card free">
+            <h3>Free</h3>
+            <div class="price">$0</div>
+            <ul>
+              <li>3 content pieces per month</li>
+              <li>Basic repurposing</li>
+              <li>YouTube & TikTok only</li>
+              <li>Watermarked exports</li>
+            </ul>
+            <button class="btn btn-outline">Get Started</button>
+          </div>
+
+          <div class="pricing-card pro featured">
+            <div class="badge">Most Popular</div>
+            <h3>Pro</h3>
+            <div class="price">$29<span>/month</span></div>
+            <ul>
+              <li>Unlimited content pieces</li>
+              <li>All platforms supported</li>
+              <li>AI content generation</li>
+              <li>Affiliate link management</li>
+              <li>Performance analytics</li>
+              <li>Priority support</li>
+            </ul>
+            <button class="btn btn-primary">Start Free Trial</button>
+          </div>
+
+          <div class="pricing-card agency">
+            <h3>Agency</h3>
+            <div class="price">$99<span>/month</span></div>
+            <ul>
+              <li>Everything in Pro</li>
+              <li>White-label solution</li>
+              <li>API access</li>
+              <li>Team collaboration</li>
+              <li>Custom integrations</li>
+              <li>Dedicated support</li>
+            </ul>
+            <button class="btn btn-outline">Contact Sales</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 Content Repurposer Pro. Turn content into cash.</p>
+    </footer>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
