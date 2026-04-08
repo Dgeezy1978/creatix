@@ -30,7 +30,7 @@ npm run preview
 This repo is configured for GitHub Pages deployment via GitHub Actions.
 
 - On each push to `main`, the workflow will build the app and publish the `dist/` output.
-- No manual GitHub Pages branch configuration is needed.
+- The site is available at: `https://Dgeezy1978.github.io/creatix/`
 
 If you want to publish locally instead, you can still run:
 
