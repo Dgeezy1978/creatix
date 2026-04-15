@@ -2,17 +2,23 @@
 import ibm_db from 'ibm_db';
 
 // Database connection string
-// Format: DATABASE=dbname;HOSTNAME=host;PORT=port;PROTOCOL=TCPIP;UID=username;PWD=password;
-const connectionString = process.env.DB2_CONNECTION_STRING || 'DATABASE=sample;HOSTNAME=localhost;PORT=50000;PROTOCOL=TCPIP;UID=db2inst1;PWD=password;';
+// For GitHub Pages deployment, we'll use demo mode since DB2 requires server-side connection
+const connectionString = process.env.DB2_CONNECTION_STRING ||
+  'DEMO_MODE'; // Placeholder for demo mode
 
 // Database operations
 class DB2Service {
   constructor() {
     this.connectionString = connectionString;
+    this.isDemoMode = this.connectionString === 'DEMO_MODE';
   }
 
   // Connect to database
   async connect() {
+    if (this.isDemoMode) {
+      throw new Error('Demo mode: DB2 connection not available on GitHub Pages. Configure a backend server for full functionality.');
+    }
+
     return new Promise((resolve, reject) => {
       ibm_db.open(this.connectionString, (err, conn) => {
         if (err) {
@@ -70,6 +76,14 @@ class DB2Service {
 
   // Test connection
   async testConnection() {
+    if (this.isDemoMode) {
+      return {
+        success: false,
+        message: 'Demo Mode: DB2 connection requires server-side backend. This is normal for GitHub Pages deployment.',
+        error: 'DEMO_MODE'
+      };
+    }
+
     try {
       const result = await this.executeQuery('SELECT 1 as test FROM SYSIBM.SYSDUMMY1');
       return { success: true, message: 'DB2 connection successful', data: result };

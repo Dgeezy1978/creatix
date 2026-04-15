@@ -325,4 +325,121 @@ code {
   font-family: var(--mono);
   font-size: 14px;
   min-height: 20px;
+  max-width: 600px;
+}
+
+/* Demo mode styling */
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.badge.demo {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.status-text {
+  color: var(--text);
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Demo content form styling */
+.demo-content-form {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+
+.demo-content-form h3 {
+  margin-top: 0;
+  color: var(--text-h);
+  font-size: 20px;
+}
+
+.demo-content-form p {
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.content-input,
+.content-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: var(--sans);
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+}
+
+.content-input:focus,
+.content-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.content-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.process-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.process-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.process-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.clear-btn {
+  background: #ecf0f1;
+  color: var(--text);
+  border: 2px solid var(--border);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.clear-btn:hover {
+  background: #d5dbdb;
+}
+
+.process-result {
+  margin-top: 16px;
+  min-height: 40px;
 }
