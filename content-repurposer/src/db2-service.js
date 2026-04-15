@@ -79,7 +79,7 @@ class DB2Service {
     if (this.isDemoMode) {
       return {
         success: false,
-        message: 'Demo Mode: DB2 connection requires server-side backend. This is normal for GitHub Pages deployment.',
+        message: 'Demo Mode: DB2 connection not available on GitHub Pages. This is normal for static hosting.',
         error: 'DEMO_MODE'
       };
     }

@@ -35,6 +35,7 @@ document.querySelector('#app').innerHTML = `
     </div>
     <div id="process-result" class="process-result"></div>
   </div>
+</section>
 
 <div class="ticks"></div>
 
@@ -196,5 +197,3 @@ function generateRepurposedContent(title, content) {
     </div>
   `
 }
-
-setupCounter(document.querySelector('#counter'))

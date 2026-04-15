@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "creatix-studio",
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "AlvaAI.Alva",
+		"workbench.colorTheme": "Visual Studio Dark",
+		"editor.aiStats.enabled": true
+	}
+}

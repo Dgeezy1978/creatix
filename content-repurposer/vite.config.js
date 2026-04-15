@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   // Specify the root directory for the application
-  root: '.',
+  root: 'content-repurposer',
 
   // Build configuration
   build: {
