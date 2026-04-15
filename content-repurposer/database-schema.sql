@@ -53,4 +53,3 @@ CREATE TABLE content_repurposer.user_sessions (
 CREATE INDEX idx_content_items_status ON content_repurposer.content_items(status);
 CREATE INDEX idx_content_items_created ON content_repurposer.content_items(created_at DESC);
 CREATE INDEX idx_content_variations_content ON content_repurposer.content_variations(content_id);
-CREATE INDEX idx_content_analytics_variation ON content_repurposer.content_analytics(variation_id);
