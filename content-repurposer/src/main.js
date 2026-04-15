@@ -196,3 +196,5 @@ function generateRepurposedContent(title, content) {
     </div>
   `
 }
+
+setupCounter(document.querySelector('#counter'))
