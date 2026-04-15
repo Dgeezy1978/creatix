@@ -3,6 +3,7 @@ import javascriptLogo from './assets/javascript.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import { setupCounter } from './counter.js'
+import DB2Service from './db2-service.js'
 
 document.querySelector('#app').innerHTML = `
 <section id="center">
@@ -12,10 +13,12 @@ document.querySelector('#app').innerHTML = `
     <img src=${viteLogo} class="vite" alt="Vite logo" />
   </div>
   <div>
-    <h1>Get started</h1>
+    <h1>Content Repurposer with DB2</h1>
     <p>Edit <code>src/main.js</code> and save to test <code>HMR</code></p>
   </div>
   <button id="counter" type="button" class="counter"></button>
+  <button id="db-test" type="button" class="db-test">Test DB2 Connection</button>
+  <div id="db-result"></div>
 </section>
 
 <div class="ticks"></div>
@@ -58,3 +61,26 @@ document.querySelector('#app').innerHTML = `
 `
 
 setupCounter(document.querySelector('#counter'))
+
+// DB2 Database functionality
+const dbService = new DB2Service()
+const dbTestButton = document.querySelector('#db-test')
+const dbResult = document.querySelector('#db-result')
+
+dbTestButton.addEventListener('click', async () => {
+  dbResult.textContent = 'Testing DB2 connection...'
+  dbTestButton.disabled = true
+
+  try {
+    const result = await dbService.testConnection()
+    if (result.success) {
+      dbResult.innerHTML = `<div style="color: green;">✅ ${result.message}</div>`
+    } else {
+      dbResult.innerHTML = `<div style="color: red;">❌ ${result.message}</div>`
+    }
+  } catch (error) {
+    dbResult.innerHTML = `<div style="color: red;">❌ Connection failed: ${error.message}</div>`
+  } finally {
+    dbTestButton.disabled = false
+  }
+})
